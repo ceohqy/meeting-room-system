@@ -95,26 +95,107 @@ src/main/java/com/meeting/
 ---
 
 ## 🖼 项目截图
-<img width="2553" height="1336" alt="ed0e27d9-800f-4073-84bd-880e615e7391" src="https://github.com/user-attachments/assets/3082fda5-1b29-43b5-b8de-a91786dc2a1c" />
-<img width="2559" height="1346" alt="b5140253-3eef-496f-a3db-b869ab22562d" src="https://github.com/user-attachments/assets/33575e01-e92b-4012-9dbc-02fdc9f7b7e7" />
-<img width="2559" height="1347" alt="b9724ffd-28b6-4fb7-9f88-fdb49c2f5131" src="https://github.com/user-attachments/assets/4af7f801-c097-4674-acad-1092980c294c" />
-<img width="2559" height="1344" alt="72afdf0c-6f95-490a-9cdb-91e4c344f731" src="https://github.com/user-attachments/assets/5a16b0de-a065-486c-b20e-acfc9621145e" />
-
-<img width="2554" height="1338" alt="88c4d40a-cc5c-47a7-9dbf-0ff60566d673" src="https://github.com/user-attachments/assets/253ed0b9-cf92-4192-b3ea-6902d9582840" />
 
 
-<img width="2558" height="1344" alt="ee06d6fb-60ef-4f61-91e0-b1b8e2bcde4f" src="https://github.com/user-attachments/assets/40877592-4abc-4288-8359-ecb18820e3f3" />
-<img width="2559" height="1327" alt="77c7d141-bf5a-4fa1-bf31-d358ec5632cd" src="https://github.com/user-attachments/assets/25893ea2-55a7-427c-a142-d3c4f24598d0" />
+### 🏠 工作台
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3082fda5-1b29-43b5-b8de-a91786dc2a1c" width="700"/>
+</p>
 
+---
+
+### 🏢 会议室管理
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/33575e01-e92b-4012-9dbc-02fdc9f7b7e7" width="700"/>
+</p>
+
+---
+
+### 📅 预约管理（支持时间冲突检测）
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4af7f801-c097-4674-acad-1092980c294c" width="700"/>
+</p>
+
+---
+
+### 🧩 配件管理
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5a16b0de-a065-486c-b20e-acfc9621145e" width="700"/>
+</p>
+
+---
+
+### ✅ 审批管理
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/253ed0b9-cf92-4192-b3ea-6902d9582840" width="700"/>
+</p>
+
+---
+
+### 📊 数据统计
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/40877592-4abc-4288-8359-ecb18820e3f3" width="700"/>
+</p>
+
+---
+
+### 👤 用户管理
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/25893ea2-55a7-427c-a142-d3c4f24598d0" width="700"/>
+</p>
 
 
 ## ⚙️ 项目结构
 
 
 meeting-room-system/
-├── frontend/ # Vue3 前端项目
-├── backend/ # Spring Boot 后端
-├── database/ # SQL脚本
+meeting-room-system/
+├── frontend/ # 前端项目（Vue3 + Vite）
+│ ├── src/
+│ │ ├── api/ # 接口封装（统一请求后端API）
+│ │ ├── assets/ # 静态资源（图片等）
+│ │ ├── layouts/ # 布局组件（侧边栏/导航栏）
+│ │ ├── router/ # 路由管理
+│ │ ├── store/ # 状态管理
+│ │ ├── styles/ # 全局样式
+│ │ ├── utils/ # 工具函数
+│ │ ├── views/ # 页面（核心业务页面）
+│ │ ├── App.vue # 根组件
+│ │ └── main.js # 入口文件
+│ ├── index.html # HTML入口
+│ ├── package.json # 依赖管理
+│ └── vite.config.js # Vite配置
+│
+├── backend/ # 后端项目（Spring Boot）
+│ ├── src/main/java/com/meeting/meeting_room_system/
+│ │ ├── annotation/ # 自定义注解
+│ │ ├── aspect/ # AOP切面（日志/权限等）
+│ │ ├── common/ # 通用类（统一返回结果等）
+│ │ ├── config/ # 配置类（跨域、拦截器等）
+│ │ ├── controller/ # 控制层（处理前端请求）
+│ │ ├── dto/ # 数据传输对象
+│ │ ├── entity/ # 实体类（数据库映射）
+│ │ ├── enums/ # 枚举类
+│ │ ├── exception/ # 全局异常处理
+│ │ ├── filter/ # 过滤器
+│ │ ├── interceptor/ # 拦截器（登录校验等）
+│ │ ├── repository/ # 数据访问层（DAO）
+│ │ ├── service/ # 业务逻辑层
+│ │ ├── util/ # 工具类
+│ │ └── MeetingRoomSystemApplication.java # 启动类
+│ │
+│ ├── src/main/resources/
+│ │ ├── application.yml # 项目配置
+│ │ ├── mapper/ # SQL映射文件（如有）
+│ │ └── static/ # 静态资源
+│ │
+│ ├── pom.xml # Maven依赖管理
+│ └── mvnw / mvnw.cmd # Maven启动脚本
+│
+├── database/ # 数据库脚本
+│ ├── init_data.sql # 初始化数据
+│ └── update_password.sql # 更新脚本
+│
 └── README.md
 
 
